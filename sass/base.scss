@@ -1,0 +1,91 @@
+@import "mixins";
+
+body { 
+  max-width: 850px; 
+  margin: 0 auto;
+  z-index:1;
+}
+p {
+  @include font-size(14px);
+}
+.content-wrapper { 
+  text-align:center;
+  margin-top:2em;
+  svg:not(.logo) { 
+    transition: all .2s linear; 
+    &:nth-child(odd) {
+      fill:steelblue;
+      &:hover {
+        fill:crimson;
+        transform: rotate(30deg);
+      }
+    }
+    &:nth-child(even) {
+      fill:crimson;
+      &:hover {
+        fill:steelblue;
+        transform: rotate(30deg);
+      }
+    }
+  }
+}
+
+svg.logo {
+	width:400px;
+	height:400px;
+	display:block;
+	margin:0 auto;
+}
+
+.icon {
+  width:64px;
+  height:64px;
+}
+
+.cross-shape {
+    transform-origin: 50% 50%;
+    animation: rotate 6s linear infinite;
+}
+
+.svg-letter {
+  animation: kaboom 1.5s ease alternate infinite;
+  &:nth-child(1) {
+    fill:steelblue;
+    animation-delay: -.75s;
+  }
+  &:nth-child(2) {
+    fill:crimson;
+    animation-delay: 0.75s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes kaboom {
+  80% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes hideshow {
+  0% { opacity: 1; }
+  10% { opacity: 1; }
+  15% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,26 @@
+<svg  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="shape-group">
+        <g id="border-shape">
+            <rect x="74" y="53.5" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="5" stroke-miterlimit="10" width="160.1" height="160.1"/>
+        </g>
+        <g id="cross-shape">
+            <path fill="none" stroke="#1A1A1A" stroke-width="2" stroke-miterlimit="10" d="M98,77l111,111L98,77z"/>
+            <line fill="none" stroke="#1A1A1A" stroke-width="2" stroke-miterlimit="10" x1="98" y1="188" x2="209" y2="77"/>
+        </g>
+        <g id="r-letter-shape">
+            <path d="M155.2,95.4H155h-4.9v7.1h-6.4V77.3H155c6.7,0,10.5,3.2,10.5,8.8c0,3.9-1.6,6.6-4.6,8.1l5.3,8.3H159
+                L155.2,95.4z M155,90.3c2.8,0,4.4-1.4,4.4-4.1c0-2.6-1.6-4-4.4-4h-4.9v8H155z"/>
+        </g>
+        <g id="j-letter-shape">
+            <path d="M161.2,179.8c0,5.4-3.3,8.5-8.7,8.5c-3.6,0-6.4-1.5-8.7-4l3-4.3c1.8,1.9,3.8,2.8,5.3,2.8
+                c1.7,0,2.7-1,2.7-3.1V168h-8.6v-5.2h15.1V179.8z"/>
+        </g>
+        <g id="dev-text">
+            <text transform="matrix(1 0 0 1 98 111.9326)" display="none">
+                <tspan x="0" y="0" display="inline" font-family="'Montserrat-Regular'" font-size="36px">dev</tspan>
+                <tspan x="0" y="36" display="inline" font-family="'Montserrat-Regular'" font-size="36px">elo</tspan>
+                <tspan x="0" y="72" display="inline" font-family="'Montserrat-Regular'" font-size="36px">per</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
