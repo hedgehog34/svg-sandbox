@@ -5,7 +5,11 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     svgSymbols = require('gulp-svg-symbols'),
     autoprefixer = require('gulp-autoprefixer'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass')
+    install = require("gulp-install");
+
+gulp.src(['./bower.json', './package.json'])
+  .pipe(install());
 
 gulp.task('js', function () {
     return gulp.src('js/*.js')
