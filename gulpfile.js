@@ -3,7 +3,6 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
     sourcemaps = require('gulp-sourcemaps'),
-    svg2png = require('gulp-svg2png'),
     svgSymbols = require('gulp-svg-symbols'),
     autoprefixer = require('gulp-autoprefixer'),
     sass = require('gulp-sass');
@@ -19,19 +18,7 @@ gulp.task('js', function () {
       .pipe(gulp.dest('js/dist'));
 });
 
-gulp.task('svg2png', function () {
-
-    // Define source files
-    //return gulp.src('assets/svg/icons/**/*.svg')
-
-        // Run the svg2png npm module on these source files
-        //.pipe(svg2png())
-
-        // Define where the response is distributed to
-        //.pipe(gulp.dest( 'assets/dist/icons/png/' ));
-});
-
-gulp.task('sprites', ['svg2png'], function () {
+gulp.task('sprites', function () {
     return gulp.src('assets/svg/icons/**/*.svg')
 		    .pipe(
 			    svgSymbols({
