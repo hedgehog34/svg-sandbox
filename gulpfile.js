@@ -5,11 +5,16 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     svgSymbols = require('gulp-svg-symbols'),
     autoprefixer = require('gulp-autoprefixer'),
-    sass = require('gulp-sass')
-    install = require("gulp-install");
+    sass = require('gulp-sass'),
+    install = require("gulp-install"),
+    del = require('del');
 
 gulp.src(['./bower.json', './package.json'])
   .pipe(install());
+
+gulp.task('clean', function(cb) {
+    del(['./css', 'js/dist', './assets/dist/icons'], cb)
+});
 
 gulp.task('js', function () {
     return gulp.src('js/*.js')
@@ -33,10 +38,11 @@ gulp.task('sprites', function () {
 			.pipe(gulp.dest( 'assets/dist/icons/' ));
 });
 
+// More options for node-sass - https://github.com/sass/node-sass#options
 gulp.task('sass', function () {
   return gulp.src('sass/*.scss')
       .pipe(sourcemaps.init())
-      .pipe(sass())
+      .pipe(sass({outputStyle: 'compact'}))  // CSS output style (nested | expanded | compact | compressed)
       .pipe(sourcemaps.write('../css'))
       .pipe(gulp.dest('css'));
 });
@@ -53,5 +59,11 @@ gulp.task('prefixer', ['sass'], function () {
 });
 
 gulp.task('watch', function () {
+
   gulp.watch('sass/**/*.scss', ['prefixer']);
+
+});
+
+gulp.task('default', ['clean'], function() {
+    gulp.start('js', 'sprites', 'prefixer', 'watch');
 });

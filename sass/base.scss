@@ -10,17 +10,22 @@ p {
 .content-wrapper { 
   text-align:center;
   margin-top:2em;
+
   svg:not(.logo) { 
     transition: all .2s linear; 
+
     &:nth-child(odd) {
       fill:steelblue;
+
       &:hover {
         fill:crimson;
         transform: rotate(30deg);
       }
     }
+
     &:nth-child(even) {
       fill:crimson;
+
       &:hover {
         fill:steelblue;
         transform: rotate(30deg);
